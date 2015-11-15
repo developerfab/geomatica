@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ title }}</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	{% block style %}
+	{% endblock %}
+</head>
+<body>
+	<div class="container">
+		{% block contenido %}
+		{% endblock %}
+	</div>
+	{% block script %}
+	{% endblock %}
+</body>
+</html>
