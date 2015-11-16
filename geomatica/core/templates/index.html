@@ -3,7 +3,7 @@
 <form method="POST" action="{% url 'core:notificacion' %}">{% csrf_token %}
 	<button class="btn btn-success" type="submit">Ver notificaciones</button>
 </form>
-<form method="POST" action="{% url 'core:enviar_notificacion_hueco' %}">{% csrf_token %}
+<form method="POST" action="{% url 'core:opcion_hueco' %}">{% csrf_token %}
 	<button class="btn btn-danger" type="submit">Enviar Notificacion de un hueco</button>
 </form>
 {% endblock %}

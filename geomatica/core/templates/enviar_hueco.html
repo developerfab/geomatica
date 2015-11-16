@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block contenido %}
-	<form method="POST" action"">{% csrf_token %}
-		<button class="btn" type="submit">DESDE MI POSICION</button>
+<br>
+	<form method="POST" action="">{% csrf_token %}
+		<button class="btn btn-danger" type="submit">DESDE MI POSICION</button>
+	</form>
+	<br>
+	<form method="GET" action="{% url 'core:enviar_notificacion_hueco' %}">
+		<button class="btn btn-warning">DESDE COORDENADAS</button>
 	</form>
 {% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<form action="{% url 'core:enviar_notificacion_hueco' %}" method="POST">
+	{% csrf_token %}
+	{{ form }}
+    <input type="submit" value="Enviar" />
+</form>
+{% endblock %}

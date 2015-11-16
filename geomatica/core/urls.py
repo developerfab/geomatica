@@ -6,4 +6,5 @@ urlpatterns = patterns(
     url(r'^$', views.index, name="index"),
     url(r'^notificacion/$', views.notificacion, name="notificacion"),
     url(r'^add_hueco/$', views.add_hueco, name="enviar_notificacion_hueco"),
+    url(r'^opcion_hueco/$', views.opcion_hueco, name="opcion_hueco"),
     )
