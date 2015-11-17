@@ -11,12 +11,13 @@ def index(request):
     contexto = {'title':'BogoGIS'}
     return render(request, 'index.html', contexto)
 
-def notificacion(request):
+def lista_notificacion(request):
 	"""
 	Metodo para visualizar la lista de notificaciones
 	"""
-	contexto = { "title":"BogoGIS-Notificacion", "latitud": 4.710988599999999, "longitud": -74.072092 }
-	return render(request, 'map_location.html', contexto)
+	lista = Hueco.objects.all()
+	contexto = { "title":"BogoGIS-Notificacion", "lista":lista } #"latitud": 4.710988599999999, "longitud": -74.072092
+	return render(request, 'lista_notificacion.html', contexto)
 
 def opcion_hueco(request):
 	contexto = { "title":"BogoGIS-adicionar" }
@@ -27,10 +28,17 @@ def add_hueco(request):
 	Metodo para agregar y crear una notificacion de hueco
 	"""
 	contexto = { 'title':'BogoGIS-huecos'}
+	msg = ""
 	if request.method == 'POST':
-		return render(request, 'enviar_hueco.html', contexto)
+		form = FormCoord(request.POST)
+		if form.is_valid():
+			form.save()
+			msg = "Tu informacion es valiosa para nosostros, gracias por notificar"
+		else:
+			msg = "Error en la informacion, por favor revisa los campos"
+			contexto['form'] = form
 	else:
 		form = FormCoord()
 		contexto['form'] = form
-
+	contexto['msg'] = msg
 	return render(request, 'from_coord.html', contexto)

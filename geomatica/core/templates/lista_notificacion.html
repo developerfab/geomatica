@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<td>Direccion</td>
+			<td>latitud</td>
+			<td>longitud</td>
+			<td>Especifico</td>
+		</tr>
+	</thead>
+	{% for notificacion in lista %}
+		<tr>
+			<td>{{ notificacion.direccion }}</td>
+			<td>{{ notificacion.latitud }}</td>
+			<td>{{ notificacion.longitud }}</td>
+			<td> <a href="">ver</a> </td>
+		</tr>
+	{% endfor %}
+</table>
+{% endblock %}

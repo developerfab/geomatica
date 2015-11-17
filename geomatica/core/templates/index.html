@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block contenido %}
-<form method="POST" action="{% url 'core:notificacion' %}">{% csrf_token %}
+<form method="POST" action="{% url 'core:lista_notificacion' %}">{% csrf_token %}
 	<button class="btn btn-success" type="submit">Ver notificaciones</button>
 </form>
 <form method="POST" action="{% url 'core:opcion_hueco' %}">{% csrf_token %}

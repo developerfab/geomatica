@@ -6,3 +6,5 @@ class FormCoord(ModelForm):
     class Meta:
         model = Hueco
         fields = '__all__'
+        exclude = ['foto']
+        
