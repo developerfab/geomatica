@@ -7,4 +7,5 @@ urlpatterns = patterns(
     url(r'^lista_notificacion/$', views.lista_notificacion, name="lista_notificacion"),
     url(r'^add_hueco/$', views.add_hueco, name="enviar_notificacion_hueco"),
     url(r'^opcion_hueco/$', views.opcion_hueco, name="opcion_hueco"),
+    url(r'^especifico_notificacion/$', views.especifico_notificacion, name="especifico_notificacion"),
     )

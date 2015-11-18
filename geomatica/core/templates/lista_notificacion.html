@@ -14,7 +14,7 @@
 			<td>{{ notificacion.direccion }}</td>
 			<td>{{ notificacion.latitud }}</td>
 			<td>{{ notificacion.longitud }}</td>
-			<td> <a href="">ver</a> </td>
+			<td> <a href="{% url 'core:especifico_notificacion' %}?identificador={{ notificacion.id }}">ver</a> </td>
 		</tr>
 	{% endfor %}
 </table>
