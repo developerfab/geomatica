@@ -16,7 +16,7 @@ def lista_notificacion(request):
 	Metodo para visualizar la lista de notificaciones
 	"""
 	lista = Hueco.objects.all()
-	contexto = { "title":"BogoGIS-Notificacion", "lista":lista } #
+	contexto = { "title":"BogoGIS-Notificacion", "lista":lista }
 	return render(request, 'lista_notificacion.html', contexto)
 
 def opcion_hueco(request):

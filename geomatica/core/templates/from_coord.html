@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% block contenido %}
 {{ msg }}
+{% if form %}
 <form action="{% url 'core:enviar_notificacion_hueco' %}" method="POST">
 	{% csrf_token %}
 	{{ form }}
     <input type="submit" value="Enviar" />
 </form>
+{% endif %}
 {% endblock %}
