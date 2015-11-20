@@ -1,5 +1,7 @@
 $(function () {
-  obtenerUbicacion();
+  $('body').on('click','#mi_ubicacion', function(e) {
+    obtenerUbicacion();
+  });
 });
 
 function obtenerUbicacion() { 
@@ -13,7 +15,6 @@ function mostrarUbicacion(posicion){
   var latitud = posicion.coords.latitude; 
   var longitud = posicion.coords.longitude;
   var div = document.getElementById("ubicacion"); 
-  div.innerHTML = "Tu estas en: Latitud: " + latitud + ", Longitud: " + longitud; 
 
   $('#id_latitud').val(latitud);
   $('#id_longitud').val(longitud);

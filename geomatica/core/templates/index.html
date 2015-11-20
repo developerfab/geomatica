@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
 {% block contenido %}
 <div class="row">
-  <div class="small-12 medium-11 small-centered columns">
-  
+  <div class="small-11 medium-6 small-centered columns">
+    <h1 class="title">Hollow Street</h1>
+    <img id="img_hueco" src="/core/static/img/hueco.jpg">
+  </div>
+  <div class="small-12 medium-6 small-centered columns">
+    
     <form method="POST" action="{% url 'core:lista_notificacion' %}">{% csrf_token %}
-    	<button class="btn btn-success" type="submit">Ver notificaciones</button>
+    	<button class="button expand" type="submit">Ver notificaciones</button>
     </form>
-    <form method="POST" action="{% url 'core:opcion_hueco' %}">{% csrf_token %}
-    	<button class="btn btn-danger" type="submit">Enviar Notificacion de un hueco</button>
+    <form method="GET" action="{% url 'core:enviar_notificacion_hueco' %}">{% csrf_token %}
+    	<button class="button expand" type="submit">Notificar un hueco</button>
     </form>
   </div>
 </div>
