@@ -7,6 +7,7 @@
 			<td>latitud</td>
 			<td>longitud</td>
 			<td>Especifico</td>
+			<td>Estadisticas</td>
 		</tr>
 	</thead>
 	{% for notificacion in lista %}
@@ -15,6 +16,7 @@
 			<td>{{ notificacion.latitud }}</td>
 			<td>{{ notificacion.longitud }}</td>
 			<td> <a href="{% url 'core:especifico_notificacion' %}?identificador={{ notificacion.id }}">ver</a> </td>
+			<td> <a href="{% url 'core:estadisticas_hueco' %}?identificador={{ notificacion.id }}">Estadistica</a> </td>
 		</tr>
 	{% endfor %}
 </table>

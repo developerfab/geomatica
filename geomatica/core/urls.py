@@ -8,4 +8,5 @@ urlpatterns = patterns(
     url(r'^add_hueco/$', views.add_hueco, name="enviar_notificacion_hueco"),
     url(r'^opcion_hueco/$', views.opcion_hueco, name="opcion_hueco"),
     url(r'^especifico_notificacion/$', views.especifico_notificacion, name="especifico_notificacion"),
+    url(r'^estadisticas_hueco/$', views.estadistica_hueco, name="estadisticas_hueco"),
     )
