@@ -1,19 +1,9 @@
-{% block style %}
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 100%;
-      }
-    </style>
-{% endblock %}
+{% extends 'base.html' %}
 {% block contenido %}
     <div id="map"></div>
 {% endblock %}
 {% block script %}
+
   <script>
 function initMap() {
   var myLatLng = {lat: {{ latitud }}, lng: {{ longitud }}};
@@ -31,7 +21,6 @@ function initMap() {
 }
 
     </script>
-    <script
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5TqLnWHMFlFSxufxXOEJK7jp-J3_isJY&signed_in=true&libraries=places&callback=initMap" async defer></script>
+    
 {% endblock %}
   

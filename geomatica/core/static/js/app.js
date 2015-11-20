@@ -2,6 +2,7 @@ $(function () {
   $('body').on('click','#mi_ubicacion', function(e) {
     obtenerUbicacion();
   });
+
 });
 
 function obtenerUbicacion() { 
