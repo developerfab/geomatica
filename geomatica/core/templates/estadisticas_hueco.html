@@ -1,22 +1,8 @@
-{% block style %}
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <title>Circles</title>
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 100%;
-      }
-    </style>
-{% endblock %}
+{% extends 'base.html' %}
 {% block contenido %}
-    <div id="map"></div>
+    <div id="map2"></div>
 {% endblock %}
-{% block scritp %}
+{% block script %}
     <script>
 
 // This example creates circles on the map, representing populations in North
@@ -33,7 +19,7 @@ var citymap = {
 
 function initMap() {
   // Create the map.
-  var map = new google.maps.Map(document.getElementById('map'), {
+  var map = new google.maps.Map(document.getElementById('map2'), {
     zoom: 15,
     center: {lat: {{ latitud }}/*4.710988599999999*/, lng: {{ longitud }}/*-74.072092*/},
     mapTypeId: google.maps.MapTypeId.TERRAIN
@@ -57,6 +43,4 @@ function initMap() {
 }
 
     </script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5TqLnWHMFlFSxufxXOEJK7jp-J3_isJY&signed_in=true&callback=initMap"></script>
 {% endblock %}

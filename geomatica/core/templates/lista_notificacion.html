@@ -1,23 +1,28 @@
 {% extends 'base.html' %}
 {% block contenido %}
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<td>Direccion</td>
-			<td>latitud</td>
-			<td>longitud</td>
-			<td>Especifico</td>
-			<td>Estadisticas</td>
-		</tr>
-	</thead>
-	{% for notificacion in lista %}
-		<tr>
-			<td>{{ notificacion.direccion }}</td>
-			<td>{{ notificacion.latitud }}</td>
-			<td>{{ notificacion.longitud }}</td>
-			<td> <a href="{% url 'core:especifico_notificacion' %}?identificador={{ notificacion.id }}">ver</a> </td>
-			<td> <a href="{% url 'core:estadisticas_hueco' %}?identificador={{ notificacion.id }}">Estadistica</a> </td>
-		</tr>
-	{% endfor %}
-</table>
+<div class="row">
+	<div class="small-12 small-centered columns">
+		<table role="grid">
+			<thead>
+				<tr>
+					<td>Direccion</td>
+					<td>latitud</td>
+					<td>longitud</td>
+					<td>Especifico</td>
+					<td>Estadisticas</td>
+				</tr>
+			</thead>
+			{% for notificacion in lista %}
+				<tr>
+					<td>{{ notificacion.direccion }}</td>
+					<td>{{ notificacion.latitud }}</td>
+					<td>{{ notificacion.longitud }}</td>
+					<td> <a href="{% url 'core:especifico_notificacion' %}?identificador={{ notificacion.id }}">ver</a> </td>
+					<td> <a href="{% url 'core:estadisticas_hueco' %}?identificador={{ notificacion.id }}">Estadistica</a> </td>
+				</tr>
+			{% endfor %}
+		</table>
+	</div>	
+</div>
+
 {% endblock %}
