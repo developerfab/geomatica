@@ -1,0 +1,121 @@
+@import "settings";
+@import "foundation";
+
+// Or selectively include components
+@import
+//   "foundation/components/accordion",
+"foundation/components/alert-boxes",
+"foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+"foundation/components/button-groups",
+"foundation/components/buttons",
+//   "foundation/components/clearing",
+"foundation/components/dropdown",
+"foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+"foundation/components/forms",
+"foundation/components/grid",
+"foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+"foundation/components/labels",
+"foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+"foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+"foundation/components/side-nav",
+"foundation/components/split-buttons",
+"foundation/components/sub-nav",
+//   "foundation/components/switches",
+"foundation/components/tables",
+//   "foundation/components/tabs",
+"foundation/components/thumbs",
+//   "foundation/components/tooltips",
+"foundation/components/top-bar",
+//   "foundation/components/type",
+"foundation/components/offcanvas",
+"foundation/components/visibility";
+
+
+//icnlude any new classes
+
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic);
+
+
+$lato: 'Lato', sans-serif;
+$oswald: 'Oswald', sans-serif;
+
+$verde-1: #43AC6A;
+$verde-2: #91CA91;
+$verde-3: #004D00;
+$boton-nav: #fff;
+$texto-negro: #333;
+
+
+html,
+body {
+    font-size: 100%;
+    height: 100%;
+}
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+
+
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+
+@media #{$small-up} {
+    body {
+        h1, h2, h3, h4, h5 {
+            color: white;
+            text-align: center;
+            font-family: $oswald;
+        }
+        .title-1 {
+            background: $verde-1;
+            min-height: 120px;
+            padding-top: 35px; 
+            h2 {
+                font-size: 2rem;
+            }
+        }
+        .title-2 {
+            background: $verde-2;
+            min-height: 40px;
+            padding-top: 3px;
+        }
+        .g-grafica{
+            width: 230px;
+            height: 150px; 
+            background-color: whitesmoke;
+        }
+
+    }
+}
+
+@media #{$medium-up} {
+    body {
+    }
+}
+
+/*MediaQ - NVar Barra de navegación */
+
+@media (max-width: 620px) {
+    body nav .divider {
+    }
+}
+@media (min-width: 621px) {
+    
+}
