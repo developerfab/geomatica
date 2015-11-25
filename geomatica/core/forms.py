@@ -7,4 +7,7 @@ class FormCoord(ModelForm):
         model = Hueco
         fields = '__all__'
 
-
+class FormRobo(ModelForm):
+    class Meta:
+        model = Robo
+        fields = '__all__'

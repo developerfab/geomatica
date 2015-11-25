@@ -12,3 +12,8 @@ class Hueco(models.Model):
 class Trafico(models.Model):
     zona = models.CharField(max_length=200)
     nivel = models.IntegerField(default=1)
+
+class Robo(models.Model):
+    direccion = models.CharField(max_length=200)
+    latitud = models.FloatField(default=0.0)
+    longitud = models.FloatField(default=0.0)

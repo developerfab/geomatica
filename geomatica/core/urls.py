@@ -11,4 +11,5 @@ urlpatterns = patterns(
     url(r'^opcion_hueco/$', views.opcion_hueco, name="opcion_hueco"),
     url(r'^especifico_notificacion/$', views.especifico_notificacion, name="especifico_notificacion"),
     url(r'^estadisticas_hueco/$', views.estadistica_hueco, name="estadisticas_hueco"),
+    url(r'^reportar_robo/$', views.reportar_robo, name="reportar_robo"),
     ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

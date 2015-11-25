@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from core.models import *
-from core.forms import FormCoord
+from core.forms import FormCoord, FormRobo
 
 # Create your views here.
 
@@ -61,3 +61,23 @@ def estadistica_hueco(request):
         notificacion = Hueco.objects.filter(latitud = seleccion.latitud, longitud=seleccion.longitud)
         contexto = { "title":"Notificacion Espeficica", "latitud": notificacion[0].latitud, "longitud": notificacion[0].longitud, "cantidad":255-len(notificacion)}
     return render(request, 'estadisticas_hueco.html', contexto)
+
+def reportar_robo(request):
+    """
+    Este metodo permite reportar un robo
+    """
+    contexto = { 'title': 'Hollow-huecos' }
+    msg = ""
+    if request.method == 'POST':
+        form = FormRobo(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            msg = "Tu informacion es valiosa para nosostros, gracias por notificar"
+        else:
+            msg = "Error en la informacion, por favor revisa los campos"
+            contexto['form'] = form
+    else:
+        form = FormRobo()
+        contexto['form'] = form
+    contexto['msg'] = msg
+    return render(request, 'form_robo.html', contexto)

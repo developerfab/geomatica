@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="row">
+  <div class="small-12 medium-6 small-centered columns">
+  <br>
+  <h5>Ingrese la ubicación exacta del robo, latitud, longitud, dirreción. </h5>
+  <hr>
+    {{ msg }}
+    {% if form %}
+    <form enctype="multipart/form-data" action="{% url 'core:reportar_robo' %}" method="POST">
+      {% csrf_token %}
+      {{ form }}
+        <div class="row">
+          <div class="small-6 columns">
+            <input type="submit" value="Enviar" class="expand button" />
+          </div>
+          <div class="small-6 columns">
+            <input id="mi_ubicacion" type="button" value="Mi ubicación" class="expand button secondary" />
+          </div>
+        </div>        
+    </form>
+    {% endif %}
+    {% endblock %}
+  </div>  
+</div>
