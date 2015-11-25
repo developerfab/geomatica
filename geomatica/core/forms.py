@@ -11,3 +11,4 @@ class FormRobo(ModelForm):
     class Meta:
         model = Robo
         fields = '__all__'
+        exclude = ['fecha']

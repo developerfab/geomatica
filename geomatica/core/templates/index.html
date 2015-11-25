@@ -16,6 +16,9 @@
     <form method="GET" action="{% url 'core:reportar_robo' %}">{% csrf_token %}
       <button class="button expand" type="submit">Reportar Robo</button>
     </form>
+    <form method="GET" action="{% url 'core:lista_robo' %}">
+      <button class="button expand" type="submit">Listar Robos</button>
+    </form>
   </div>
 </div>
 {% endblock %}

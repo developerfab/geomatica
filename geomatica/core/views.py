@@ -51,7 +51,6 @@ def especifico_notificacion(request):
     contexto = { "title":"Notificacion Espeficica", "latitud": notificacion.latitud, "longitud": notificacion.longitud }
     return render(request, 'map_location.html', contexto)
 
-
 def estadistica_hueco(request):
     """
     Este metodo se encarga de realizar las estadisticas para los huecos
@@ -81,3 +80,19 @@ def reportar_robo(request):
         contexto['form'] = form
     contexto['msg'] = msg
     return render(request, 'form_robo.html', contexto)
+
+def lista_robo(request):
+    """
+    Este metodo permite ver una lista de los robos notificados
+    """
+    lista_notificacion = Robo.objects.all()
+    contexto = { 'title': 'Hollow-huecos', 'lista_robo':lista_notificacion }
+    return render(request, 'lista_robos.html', contexto)
+
+def especifico_robo(request):
+    """
+    Este metodo permite visualizar en un mapa el sitio especifico del robo
+    """
+    notificacion = Robo.objects.get(id=request.GET['identificador'])
+    contexto = { "title":"Notificacion Espeficica", "latitud": notificacion.latitud, "longitud": notificacion.longitud }
+    return render(request, 'especifico_robo.html', contexto)

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="row">
+  <div class="small-12 small-centered columns">
+    <div class="tabla"> 
+      <table role="grid">
+      <thead>
+        <tr>
+          <td>Robo</td>
+          <td>Direccion</td>
+          <td>latitud</td>
+          <td>longitud</td>
+          <td>Fecha</td>
+          <td>Mapa Especifico</td>
+        </tr>
+      </thead>
+      {% for notificacion in lista_robo %}
+      
+        <tr>
+          <td>{{ notificacion.id }}</td>
+          <td>{{ notificacion.direccion }}</td>
+          <td>{{ notificacion.latitud }}</td>
+          <td>{{ notificacion.longitud }}</td>
+          <td>{{ notificacion.fecha }} </td>
+          <td> <a href="{% url 'core:especifico_robo' %}?identificador={{ notificacion.id }}">ver</a> </td>
+        </tr>
+      {% endfor %}
+    </table>
+    </div>
+    
+  </div>  
+</div>
+{% endblock %}
+{% block script %}
+
+{% endblock %}
