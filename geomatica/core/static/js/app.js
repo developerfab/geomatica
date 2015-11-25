@@ -3,6 +3,7 @@ $(function () {
     obtenerUbicacion();
   });
 
+
 });
 
 function obtenerUbicacion() { 

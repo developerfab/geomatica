@@ -30,7 +30,7 @@ def add_hueco(request):
     contexto = { 'title':'Hollow-huecos'}
     msg = ""
     if request.method == 'POST':
-        form = FormCoord(request.POST)
+        form = FormCoord(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             msg = "Tu informacion es valiosa para nosostros, gracias por notificar"
