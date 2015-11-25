@@ -3,6 +3,11 @@ $(function () {
     obtenerUbicacion();
   });
 
+  $('#img-id').on('click', function() {
+    alert("mi modal");
+    $('#myModal').foundation('reveal','open');
+  });
+
 });
 
 function obtenerUbicacion() { 

@@ -7,7 +7,7 @@
   <hr>
     {{ msg }}
     {% if form %}
-    <form action="{% url 'core:enviar_notificacion_hueco' %}" method="POST">
+    <form enctype="multipart/form-data" action="{% url 'core:enviar_notificacion_hueco' %}" method="POST">
       {% csrf_token %}
       {{ form }}
         <div class="row">

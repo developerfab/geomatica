@@ -71,6 +71,13 @@ div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, t
 body {
     width: 100%;
     height: 100%;
+    .tabla {
+        width: 100%;
+        overflow:scroll;
+        table {
+            overflow: auto;
+        }
+    }
 }
 
 a:hover {
@@ -100,6 +107,16 @@ a:hover {
         #map, #map2 {
             height: 100%;
             width: 100%;
+        }
+        
+        .img-hueco {
+            margin: 0px;
+            padding:0px;
+            img {
+                height: 80px;
+                width:  80px;
+            }
+            
         }
     }
 }
