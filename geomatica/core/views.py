@@ -8,7 +8,7 @@ def index(request):
     """
     Ventana principal
     """
-    contexto = {'title':'BogoGIS'}
+    contexto = {'title':'Hollow Street'}
     return render(request, 'index.html', contexto)
 
 def lista_notificacion(request):
@@ -16,18 +16,18 @@ def lista_notificacion(request):
     Metodo para visualizar la lista de notificaciones
     """
     lista = Hueco.objects.all()
-    contexto = { "title":"BogoGIS-Notificacion", "lista":lista }
+    contexto = { "title":"Hollow-Notificacion", "lista":lista }
     return render(request, 'lista_notificacion.html', contexto)
 
 def opcion_hueco(request):
-    contexto = { "title":"BogoGIS-adicionar" }
+    contexto = { "title":"Hollow-adicionar" }
     return render(request, 'enviar_hueco.html', contexto)
 
 def add_hueco(request):
     """
     Metodo para agregar y crear una notificacion de hueco
     """
-    contexto = { 'title':'BogoGIS-huecos'}
+    contexto = { 'title':'Hollow-huecos'}
     msg = ""
     if request.method == 'POST':
         form = FormCoord(request.POST)
